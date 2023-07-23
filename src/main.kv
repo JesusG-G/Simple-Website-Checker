@@ -1,0 +1,35 @@
+<TextInput>
+    size_hint: (1, 0.5)
+<Label>
+    font_size: 15
+    size_hint: (1, 0.5)
+
+<MainLayout>
+    url: url
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        spacing: 10
+        padding: 20
+        
+        BoxLayout:
+            orientation:"horizontal"
+            Label:
+                text: "Introduce the website to check"
+            TextInput:
+                id: url
+                multiline: False
+        BoxLayout:
+            orientation:"vertical"
+            Button:
+                text: "Upload a csv file with the website to checks."
+                pos_hint: {'center_x': .5}
+                size_hint: (0.5, 0.5)
+                on_press: root.choose_csv_file()
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                text: "Check Website/s"
+                pos_hint: {'center_x': .5}
+                size_hint: (0.5, 0.5)
+                on_press: root.check_sites()
