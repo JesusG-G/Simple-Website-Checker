@@ -1,0 +1,55 @@
+<MessageSuccessPopup@Popup>
+    auto_dismiss: False
+    #size_hint: 0.6, 0.4
+    #pos_hint: {"x":0.2, "top":0.9}
+    title: "Success"
+    result_text: result_text
+    BoxLayout:
+        orientation:"vertical"
+        spacing: 10
+        ScrollView:
+            effect_cls: "ScrollEffect"
+            Label:
+                id: result_text
+                font_size: 20
+                text_size: (self.width -20), None
+                size_hint_y: None
+                height: self.texture_size[1]
+                valign: "top"
+        Button:
+            text:"Close"
+            font_size: 24
+            on_release: root.dismiss()
+
+<MessageErrorPopup@Popup>
+    auto_dismiss: False
+    size_hint: 0.6, 0.4
+    pos_hint: {"x":0.2, "top":0.9}
+    title: "Success"
+    result_text: result_text
+    BoxLayout:
+        orientation:"vertical"
+        spacing: 10
+        Label:
+            id: result_text
+            font_size: 20
+        Button:
+            text:"Close"
+            font_size: 24
+            on_release: root.dismiss()
+
+<FileErrorPopup@Popup>
+    auto_dismiss: False
+    size_hint: 0.6, 0.4
+    pos_hint: {"x":0.2, "top":0.9}
+    title: "Success"
+    BoxLayout:
+        orientation:"vertical"
+        spacing: 10
+        Label:
+            text:"Please choose a image png."
+            font_size: 10
+        Button:
+            text:"Close"
+            font_size: 24
+            on_release: root.dismiss()
